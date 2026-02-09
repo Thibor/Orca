@@ -39,8 +39,8 @@ typedef int Color;
 #define INF 32001
 #define MATE 32000
 #define MAX_PLY 64
-#define NAME "Beast"
-#define VERSION "2025-12-13"
+#define NAME "Orca"
+#define VERSION "2026-02-02"
 #define START_FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
 
 const Move PromotionTypeKnight = 0 << 12;
