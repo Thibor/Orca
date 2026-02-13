@@ -35,12 +35,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="movegen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="movesorter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>

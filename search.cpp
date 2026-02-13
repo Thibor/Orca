@@ -1,12 +1,4 @@
 #include "main.h"
-#include "movegen.h"
-#include "search.h"
-#include "movesorter.h"
-
-#include <cstdlib>
-#include <csetjmp>
-#include <iostream>
-#include <sstream>
 
 #if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>

@@ -1,9 +1,4 @@
-#include <cstdlib>
-#include <iostream>
-#include <sstream> 
 #include "main.h"
-#include "movegen.h"
-#include "search.h"
 
 using namespace std;
 

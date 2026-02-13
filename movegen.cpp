@@ -1,5 +1,4 @@
 #include "main.h"
-#include "movegen.h"
 
 const U64 RMult[64] = {
   0xa8002c000108020ULL, 0x4440200140003000ULL, 0x8080200010011880ULL, 
