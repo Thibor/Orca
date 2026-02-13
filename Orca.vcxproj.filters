@@ -35,19 +35,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="beast.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="evaluation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hashtable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="movegen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="movesorter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

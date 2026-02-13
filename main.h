@@ -419,11 +419,9 @@ inline bool ProbeHash(const U64 hash, HashEntry*& result) {
 inline void StoreHash(const U64 hash, const s16 score, const Move move, int depth, const int flags)
 {
 	const U64 base = hash & ttMask;
-	ASSERT(base <= ttMask);
-
 	const u32 lock = hash >> 32;
 	int bestScore = 512;
-	U64 best;
+	U64 best=base;
 
 	depth /= OnePly;
 
@@ -466,10 +464,6 @@ inline void StoreHash(const U64 hash, const s16 score, const Move move, int dept
 	tt[best].Move = move;
 	tt[best].Score = score;
 	tt[best].Depth = depth;
-
-	ASSERT(flags <= 0xf);
-	ASSERT(ttDate <= 0xf);
-
 	tt[best].Extra = flags | (ttDate << 4);
 }
 
@@ -585,6 +579,28 @@ private:
 	static U64 ZobristCastle[16];
 	static U64 ZobristToMove;
 };
+
+#define EVAL_FEATURE(featureName, value) const int (featureName) = (value);
+#define EVAL_CONST const
+
+extern int PsqTableOpening[16][64];
+extern int PsqTableEndgame[16][64];
+
+void InitializeEvaluation();
+
+struct EvalInfo
+{
+	int GamePhase[2];
+	bool KingDanger[2];
+};
+
+int Evaluate(const Position& position, EvalInfo& evalInfo);
+
+template<class T>
+inline const T& min(const T& a, const T& b) { return a < b ? a : b; }
+
+template<class T>
+inline const T& max(const T& a, const T& b) { return a > b ? a : b; }
 
 bool FastSee(const Position& position, const Move move, const Color us);
 int QSearch(Position& position, int alpha, const int beta);

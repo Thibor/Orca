@@ -3,7 +3,6 @@
 #include <sstream> 
 #include "main.h"
 #include "movegen.h"
-#include "evaluation.h"
 #include "search.h"
 
 using namespace std;

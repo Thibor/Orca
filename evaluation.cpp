@@ -1,6 +1,5 @@
 #include "main.h"
 #include "movegen.h"
-#include "evaluation.h"
 #include "search.h"
 
 const int EvalFeatureScale = 32;

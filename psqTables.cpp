@@ -1,5 +1,4 @@
 #include "main.h"
-#include "evaluation.h"
 
 int PsqTableOpening[16][64];
 int PsqTableEndgame[16][64];
