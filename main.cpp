@@ -39,18 +39,11 @@ int Permill() {
 	return pm;
 }
 
-void IncrementHashDate(){
+void IncrementHashDate() {
 	ttDate = (ttDate + 1) & 0xf;
 }
 
-static std::string ReadLine() {
-	const int size = 16000;
-	char line[size] = {};
-	std::fgets(line, size, stdin);
-	return std::string(line);
-}
-
-void ResetInfo() {
+static void ResetInfo() {
 	info.stop = false;
 	info.post = true;
 	info.nodes = 0;
@@ -80,10 +73,8 @@ std::string MoveToUci(const Move move) {
 	string result;
 	result += SquareToUci(GetFrom(move));
 	result += SquareToUci(GetTo(move));
-	if (GetMoveType(move) == MoveTypePromotion)
-	{
-		switch (GetPromotionMoveType(move))
-		{
+	if (GetMoveType(move) == MoveTypePromotion) {
+		switch (GetPromotionMoveType(move)) {
 		case KNIGHT: result += "n"; break;
 		case BISHOP: result += "b"; break;
 		case ROOK: result += "r"; break;
@@ -167,9 +158,7 @@ static void ParseGo(string command) {
 	SearchIterate(pos);
 }
 
-void UciCommand(string command) {
-	if (command.empty())
-		return;
+static void UciCommand(string command) {
 	if (command == "uci")
 		cout << "id name " << NAME << endl << "uciok" << endl << flush;
 	else if (command == "isready")

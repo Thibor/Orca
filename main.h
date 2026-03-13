@@ -107,7 +107,6 @@ struct SearchInfo {
 extern  SearchInfo info;
 
 const int OnePly = 1;
-const int MaxPly = 99;
 const int MaxThreads = 8;
 bool CheckUp();
 int Permill();
@@ -394,7 +393,6 @@ struct HashEntry
 		return Extra >> 4;
 	}
 };
-#pragma pack(pop)
 
 extern HashEntry* tt;
 extern U64 ttMask;

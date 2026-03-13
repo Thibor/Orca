@@ -17,7 +17,7 @@ const int DrawScore = 0;
 // TODO: Use PSQ tables in SEE?
 static const int seePieceValues[8] = { 0, 1, 3, 3, 5, 10, 10000, 0 };
 
-Move Killers[MaxPly][2];
+Move Killers[MAX_PLY][2];
 int History[16][64];
 
 // This version of SEE does not calculate the exact material imbalance, it just returns true = winning or equal, false = losing
