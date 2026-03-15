@@ -570,7 +570,6 @@ private:
 	int MoveDepth;		// used for tracking repitition draws
 	U64 DrawKeys[256];
 
-	void VerifyBoard() const;
 	U64 GetHash() const;
 	U64 GetPawnHash() const;
 	int GetPsqEval(int gameStage) const;
