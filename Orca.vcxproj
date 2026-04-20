@@ -123,7 +123,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="movegen.cpp" />
     <ClCompile Include="position.cpp" />
-    <ClCompile Include="psqTables.cpp" />
     <ClCompile Include="search.cpp" />
   </ItemGroup>
   <ItemGroup>

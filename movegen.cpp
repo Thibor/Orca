@@ -375,7 +375,7 @@ inline void GeneratePawnCaptures(Bitboard b, Move *moves, s16 *moveScores, int &
 		}															\
 	}
 
-inline bool IsKingsideCastleLegal(const Position &position, const Bitboard allPieces, const Color us, const Color them)
+inline static bool IsKingsideCastleLegal(const Position &position, const Bitboard allPieces, const Color us, const Color them)
 {
 	const int kingRow = GetRow(position.KingPos[us]);
 	if (!IsBitSet(allPieces, MakeSquare(kingRow, FILE_F)) &&
@@ -388,7 +388,7 @@ inline bool IsKingsideCastleLegal(const Position &position, const Bitboard allPi
 	return false;
 }
 
-inline bool IsQueensideCastleLegal(const Position &position, const Bitboard allPieces, const Color us, const Color them)
+inline static bool IsQueensideCastleLegal(const Position &position, const Bitboard allPieces, const Color us, const Color them)
 {
 	const int kingRow = GetRow(position.KingPos[us]);
 	if (!IsBitSet(allPieces, MakeSquare(kingRow, FILE_B)) &&

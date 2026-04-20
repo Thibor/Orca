@@ -469,8 +469,7 @@ inline void StoreHash(const U64 hash, const s16 score, const Move move, int dept
 	tt[best].Extra = flags | (ttDate << 4);
 }
 
-class Position
-{
+class Position{
 public:
 	U64 Hash;
 	U64 PawnHash;
@@ -544,25 +543,17 @@ public:
 	Bitboard GetAttacksTo(const Square square) const;
 	Bitboard GetPinnedPieces(const Square square, const Color us) const;
 
-	inline bool IsDraw() const
-	{
+	inline bool IsDraw() const{
 		if (Fifty >= 100)
 			return true;
-
-		// Check our previous positions.  If the hash key matches, it is a draw.
 		const int end = MoveDepth - Fifty;
 		for (int i = MoveDepth - 4; i >= end; i -= 2)
-		{
 			if (DrawKeys[i] == Hash)
-			{
 				return true;
-			}
-		}
 		return false;
 	}
 
-	inline void ResetMoveDepth()
-	{
+	inline void ResetMoveDepth(){
 		MoveDepth = 0;
 	}
 
