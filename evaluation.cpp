@@ -3,66 +3,64 @@
 const int EvalFeatureScale = 32;
 
 // Scaling for game phase (opening -> endgame transition)
-EVAL_FEATURE(KnightPhaseScale, 1);
-EVAL_FEATURE(BishopPhaseScale, 1);
-EVAL_FEATURE(RookPhaseScale, 2);
-EVAL_FEATURE(QueenPhaseScale, 4);
+const int KnightPhaseScale = 1;
+const int BishopPhaseScale = 1;
+const int RookPhaseScale = 2;
+const int QueenPhaseScale = 4;
 
-EVAL_CONST int gamePhaseMax = (4 * KnightPhaseScale) + (4 * BishopPhaseScale) + (4 * RookPhaseScale) + (2 * QueenPhaseScale);
+const int gamePhaseMax = (4 * KnightPhaseScale) + (4 * BishopPhaseScale) + (4 * RookPhaseScale) + (2 * QueenPhaseScale);
 
-EVAL_FEATURE(TempoOpening, 20 * EvalFeatureScale);
-EVAL_FEATURE(TempoEndgame, 10 * EvalFeatureScale);
+const int TempoOpening = 20 * EvalFeatureScale;
+const int TempoEndgame = 10 * EvalFeatureScale;
 
 // Mobility features
-EVAL_FEATURE(KnightMobilityOpening, 150);
-EVAL_FEATURE(KnightMobilityEndgame, 115);
-EVAL_FEATURE(BishopMobilityOpening, 130);
-EVAL_FEATURE(BishopMobilityEndgame, 130);
-EVAL_FEATURE(RookMobilityOpening, 50);
-EVAL_FEATURE(RookMobilityEndgame, 135);
-EVAL_FEATURE(QueenMobilityOpening, 25);
-EVAL_FEATURE(QueenMobilityEndgame, 45);
+const int KnightMobilityOpening = 150;
+const int KnightMobilityEndgame = 115;
+const int BishopMobilityOpening = 130;
+const int BishopMobilityEndgame = 130;
+const int RookMobilityOpening = 50;
+const int RookMobilityEndgame = 135;
+const int QueenMobilityOpening = 25;
+const int QueenMobilityEndgame = 45;
 
-EVAL_FEATURE(RookSemiOpenFile, 8 * EvalFeatureScale);
-EVAL_FEATURE(RookOpenFile, 17 * EvalFeatureScale);
+const int RookSemiOpenFile = 8 * EvalFeatureScale;
+const int RookOpenFile = 17 * EvalFeatureScale;
 
 // Pawn features
-EVAL_FEATURE(PassedPawnOpeningMin, 10 * EvalFeatureScale);
-EVAL_FEATURE(PassedPawnOpeningMax, 71 * EvalFeatureScale);
-EVAL_FEATURE(PassedPawnEndgameMin, 20 * EvalFeatureScale);
-EVAL_FEATURE(PassedPawnEndgameMax, 160 * EvalFeatureScale);
-EVAL_FEATURE(PassedPawnPushEndgame, 65 * EvalFeatureScale);
-EVAL_FEATURE(PassedPawnFriendlyKingDistanceEndgame, 5 * EvalFeatureScale);
-EVAL_FEATURE(PassedPawnEnemyKingDistanceEndgame, 23 * EvalFeatureScale);
-EVAL_FEATURE(UnstoppablePawnEndgame, 800 * EvalFeatureScale);
+const int PassedPawnOpeningMin = 10 * EvalFeatureScale;
+const int PassedPawnOpeningMax = 71 * EvalFeatureScale;
+const int PassedPawnEndgameMin = 20 * EvalFeatureScale;
+const int PassedPawnEndgameMax = 160 * EvalFeatureScale;
+const int PassedPawnPushEndgame = 65 * EvalFeatureScale;
+const int PassedPawnFriendlyKingDistanceEndgame = 5 * EvalFeatureScale;
+const int PassedPawnEnemyKingDistanceEndgame = 23 * EvalFeatureScale;
+const int UnstoppablePawnEndgame = 800 * EvalFeatureScale;
 
-EVAL_FEATURE(CandidatePawnOpeningMin, 5 * EvalFeatureScale);
-EVAL_FEATURE(CandidatePawnOpeningMax, 55 * EvalFeatureScale);
-EVAL_FEATURE(CandidatePawnEndgameMin, 10 * EvalFeatureScale);
-EVAL_FEATURE(CandidatePawnEndgameMax, 110 * EvalFeatureScale);
+const int CandidatePawnOpeningMin = 5 * EvalFeatureScale;
+const int CandidatePawnOpeningMax = 55 * EvalFeatureScale;
+const int CandidatePawnEndgameMin = 10 * EvalFeatureScale;
+const int CandidatePawnEndgameMax = 110 * EvalFeatureScale;
 
-EVAL_FEATURE(DoubledPawnOpening, -8 * EvalFeatureScale);
-EVAL_FEATURE(DoubledPawnEndgame, -20 * EvalFeatureScale);
-EVAL_FEATURE(IsolatedPawnOpening, -15 * EvalFeatureScale);
-EVAL_FEATURE(IsolatedOpenFilePawnOpening, -20 * EvalFeatureScale);
-EVAL_FEATURE(IsolatedPawnEndgame, -14 * EvalFeatureScale);
-EVAL_FEATURE(BackwardPawnOpening, -12 * EvalFeatureScale);
-EVAL_FEATURE(BackwardOpenFilePawnOpening, -12 * EvalFeatureScale);
-EVAL_FEATURE(BackwardPawnEndgame, -8 * EvalFeatureScale);
-
+const int DoubledPawnOpening = -8 * EvalFeatureScale;
+const int DoubledPawnEndgame = -20 * EvalFeatureScale;
+const int IsolatedPawnOpening = -15 * EvalFeatureScale;
+const int IsolatedOpenFilePawnOpening = -20 * EvalFeatureScale;
+const int IsolatedPawnEndgame = -14 * EvalFeatureScale;
+const int BackwardPawnOpening = -12 * EvalFeatureScale;
+const int BackwardOpenFilePawnOpening = -12 * EvalFeatureScale;
+const int BackwardPawnEndgame = -8 * EvalFeatureScale;
 // Material scoring
-EVAL_FEATURE(BishopPairOpening, 50 * EvalFeatureScale);
-EVAL_FEATURE(BishopPairEndgame, 70 * EvalFeatureScale);
+const int BishopPairOpening = 50 * EvalFeatureScale;
+const int BishopPairEndgame = 70 * EvalFeatureScale;
 
-EVAL_FEATURE(ExchangePenalty, 30 * EvalFeatureScale);
+const int ExchangePenalty = 30 * EvalFeatureScale;
 
 // King attack scoring
-EVAL_FEATURE(KingAttackWeightPawn, 20 * EvalFeatureScale);
-EVAL_FEATURE(KingAttackWeightKnight, 35 * EvalFeatureScale);
-EVAL_FEATURE(KingAttackWeightBishop, 30 * EvalFeatureScale);
-EVAL_FEATURE(KingAttackWeightRook, 60 * EvalFeatureScale);
-EVAL_FEATURE(KingAttackWeightQueen, 120 * EvalFeatureScale);
-
+const int KingAttackWeightPawn = 20 * EvalFeatureScale;
+const int KingAttackWeightKnight = 35 * EvalFeatureScale;
+const int KingAttackWeightBishop = 30 * EvalFeatureScale;
+const int KingAttackWeightRook = 60 * EvalFeatureScale;
+const int KingAttackWeightQueen = 120 * EvalFeatureScale;
 static const int KingAttackWeightScale[16] =
 {
 	0, 24, 136, 210, 232, 246, 252, 253, 254, 255, 256, 256, 256, 256, 256, 256,
