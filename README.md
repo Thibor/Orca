@@ -18,7 +18,8 @@ FIDE-rules-compliant chess engine
 
 ## Features
 
-- board: bitboard
+- Single file
+- Board: bitboard
 - En passant
 - Underpromotions (knight, bishop, rook)
 - Threefold repetition
