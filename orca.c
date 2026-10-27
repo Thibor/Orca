@@ -1553,6 +1553,7 @@ static void UciPerformance(Position* pos) {
 	info.depthLimit = 0;
 	U64 elapsed = 0;
 	while (elapsed < 4000) {
+		info.nodes = 0;
 		PerftDriver(pos, info.depthLimit++);
 		elapsed = GetTimeMs() - info.timeStart;
 		printf(" %2d. %8llu %12llu\n", info.depthLimit, elapsed, info.nodes);

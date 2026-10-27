@@ -19,7 +19,9 @@ FIDE-rules-compliant chess engine
 ## Features
 
 - Single file
-- Board: bitboard
+- Elo 2500
+- Board 4 reversible bitboards
+- Move generator LSB MSB
 - En passant
 - Underpromotions (knight, bishop, rook)
 - Threefold repetition
